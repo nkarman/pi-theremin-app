@@ -8,5 +8,5 @@ client = udp_client.SimpleUDPClient('127.0.0.1', 6969)
 
 while True:
     data = struct.unpack('f', ser.read(4))
-    print(int(data[0]))
-    client.send_message('/theremin/midi', int(data[0]))
+    print(data[0])
+    client.send_message('/theremin/midi', data[0])
